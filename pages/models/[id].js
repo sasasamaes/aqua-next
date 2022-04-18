@@ -23,10 +23,14 @@ function ModelsId({ model, global }) {
       <Col className="model-item-page bg-dark text-light" key={`model-item`}>
         <Row>
           <Col lg={8}>
-            <img
-              src={model?.architecturalPlan?.url}
-              alt={model?.architecturalPlan?.caption}
-            />
+            <div className="image-container">
+              <Image
+                src={model?.architecturalPlan?.url}
+                alt={model?.architecturalPlan?.caption}
+                layout="fill"
+                className="image"
+              />
+            </div>
           </Col>
           <Col lg={3}>
             <h3>{model.title}</h3>

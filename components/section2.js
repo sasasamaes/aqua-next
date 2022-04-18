@@ -10,13 +10,16 @@ const Section2 = ({ homepage, lg }) => {
           style={{
             position: 'relative',
             width: '100%',
-          
           }}
         >
-          <img
-            src={homepage?.section2?.img.url}
-            alt={homepage?.section2?.img.caption}
-          />
+          <div className="image-container">
+            <Image
+              src={homepage?.section2?.img.url}
+              alt={homepage?.section2?.img.caption}
+              layout="fill"
+              className="image"
+            />
+          </div>
         </div>
       </Col>
       <Col className="section2-text bg-dark text-light">

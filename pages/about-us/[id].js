@@ -17,11 +17,14 @@ function AboutUsId({ partner, global }) {
       <Col className="about-page" key={`about-item`}>
         <Row>
           <Col lg={7}>
-            <img
-              src={partner?.logo?.url}
-              alt={partner?.logo?.caption}
-              className="about-logo"
-            />
+            <div className="image-container">
+              <Image
+                src={partner?.logo?.url}
+                alt={partner?.logo?.caption}
+                layout="fill"
+                className="image about-logo"
+              />
+            </div>
             <p>{partner.description}</p>
             {/* <Link href={partner.url}>{partner.url}</Link> */}
           </Col>
@@ -30,7 +33,14 @@ function AboutUsId({ partner, global }) {
               {partner &&
                 partner?.slider?.map((slide, index) => (
                   <Carousel.Item key={`slide-${index}`}>
-                    <img src={slide.url} alt={slide.caption} />
+                    <div className="image-container">
+                      <Image
+                        src={slide.url}
+                        alt={slide.caption}
+                        layout="fill"
+                        className="image"
+                      />
+                    </div>
                   </Carousel.Item>
                 ))}
             </Carousel>

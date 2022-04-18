@@ -8,11 +8,17 @@ const Banner = ({ homepage, lg, global }) => {
         <div
           style={{
             position: 'relative',
-            width: '100%',
-            paddingBottom: '20%',
+            width: '40%',
+            paddingBottom: '5px',
           }}
+          className="image-container"
         >
-          <img src={global?.logo2?.url} alt={global?.logo2?.caption} />
+          <Image
+            src={global?.logo2?.url}
+            alt={global?.logo2?.caption}
+            layout="fill"
+            className="image"
+          />
         </div>
       </Col>
       <Col lg={6} className="banner-container-text">

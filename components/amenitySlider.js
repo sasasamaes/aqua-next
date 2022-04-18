@@ -16,7 +16,14 @@ const AmenitySlider = ({ amenities }) => {
                     paddingBottom: '20%',
                   }}
                 >
-                  <img src={amenity.modal?.url} alt={amenity.icon?.caption} />
+                  <div className="image-container">
+                    <Image
+                      src={amenity.modal?.url}
+                      alt={amenity.icon?.caption}
+                      layout="fill"
+                      className="image"
+                    />
+                  </div>
                 </div>
               </Carousel.Item>
             )
