@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
-// import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Models = ({ models, lg, md }) => {
   return (
@@ -21,9 +21,9 @@ const Models = ({ models, lg, md }) => {
                   <h3>{model.title}</h3>
                   <p>{model.price}</p>
                   <p>{model.description}</p>
-                  {/* <Link to={`model/${model.id}`}> */}
-                  <Button variant="primary">Ver Plano</Button>
-                  {/* </Link> */}
+                  <Link href={`/models/[id]`} as={`models/${model.id}`}>
+                    <Button variant="primary">Ver Plano</Button>
+                  </Link>
                 </Col>
               ))}
           </Row>

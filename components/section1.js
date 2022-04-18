@@ -7,17 +7,18 @@ const Section1 = ({ homepage, lg }) => {
       lg={lg}
       className="section1-container bg-dark text-light "
       style={{
-        position: 'relative',
-        paddingBottom: '20%',
+  
+        
       }}
     >
-      <Image
-        src={homepage?.section1?.background.url}
-        alt={homepage?.section1?.background.caption}
-        className="d-block w-100"
-        layout="fill"
-        objectFit="contain"
-      />
+      <div className="image-container">
+          <Image
+                src={homepage?.section1?.background.url}
+                alt={homepage?.section1?.background.caption}
+            layout="fill"
+            className="image"
+          />
+        </div>
     </Col>
   )
 }

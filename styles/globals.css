@@ -77,15 +77,17 @@ img:hover {
   margin-left: 5px;
 }
 .social-container {
-  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #006cb9;
+  color: white;
+  padding: 1.5rem 0;
 }
 .social-container .fa {
   font-size: 22px;
   cursor: pointer;
+  color: white;
 }
 /* form */
 .form-container {
@@ -102,8 +104,7 @@ img:hover {
   justify-content: center;
 }
 .form-container .form-container-info {
-  padding: 2rem;
-  padding-top: 1rem;
+  padding: 0 1rem 0.5rem 1rem;
 }
 .form-container .form-container-form {
   height: 35vh;
@@ -112,7 +113,6 @@ img:hover {
   width: 100%;
 }
 .form-container .form-container-disclaimer {
-  height: 200px;
   padding-right: 2rem;
   padding-left: 2rem;
   display: flex;
@@ -121,8 +121,8 @@ img:hover {
 
 .form-container p {
   font-size: 0.9rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .form-container h2 {
   font-size: 1.5rem;
@@ -145,27 +145,20 @@ img:hover {
   padding: 0;
   overflow: hidden;
 }
-.slider-container .carousel {
-  height: 90%;
-}
-.slider-container .carousel-indicators {
-  margin: 0;
-}
-.slider-container .carousel-item {
-  height: 90%;
-}
-.slider-container img {
-  object-fit: fill;
-  height: 100%;
+
+.image-container {
   width: 100%;
 }
-.slider-container .carousel-inner {
-  height: 100%;
+.image-container > span {
+  position: unset !important;
 }
-.carousel-fade .carousel-item-next.carousel-item-start,
-.carousel-fade .carousel-item-prev.carousel-item-end,
-.carousel-fade .carousel-item.active {
-  height: 100%;
+.image-container .image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+.slide-container {
 }
 
 /* global */
@@ -178,7 +171,7 @@ img:hover {
   background-color: #fff !important;
 }
 .form-control {
-  padding: 0.3rem 0.5rem;
+  padding: 0.1rem 0.3rem;
   display: flex;
   flex-direction: column-reverse;
   position: relative;
@@ -279,7 +272,6 @@ img:hover {
   width: 100%;
 }
 .section1-container {
-  max-height: 85vh;
   align-content: center;
   display: flex;
   padding: 0;
@@ -421,9 +413,7 @@ img:hover {
   .form-container-form {
     height: auto !important;
   }
-  .form-container .form-container-disclaimer {
-    height: 100px;
-  }
+ 
   /* banner */
   .banner-container {
     padding-top: 2rem;
@@ -494,12 +484,9 @@ img:hover {
   .form-control {
     padding: 0.4rem 0.5rem;
   }
-  /* .slider-container .carousel */
-  .slider-container .carousel,
-  .social-container {
-    height: auto;
-  }
+
   .social-container {
     padding: 1rem 0;
+    color: white;
   }
 }

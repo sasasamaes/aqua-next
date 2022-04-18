@@ -1,64 +1,80 @@
+import { useState } from 'react'
 import Layout from '../../components/layout'
-import { Row, Col, Carousel } from 'react-bootstrap'
+import { Row, Col, Button, Modal } from 'react-bootstrap'
 import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useIsMounted from '../../hooks/useIsMounted'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-function ModelsId({ partner, global }) {
+function ModelsId({ model, global }) {
   const isMounted = useIsMounted()
-  // const router = useRouter()
+  const router = useRouter()
+  const { id } = router.query
 
-  // console.log('router', router)
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   return (
-    <Layout global={global}>
-      <Nav global={global} color="light" type="page" title={partner.title} />
+    <Layout global={global} fluid>
+      <Nav global={global} color="dark" type="page" />
 
-      <Col className="about-page" key={`about-item`}>
+      <Col className="model-item-page bg-dark text-light" key={`model-item`}>
         <Row>
-          <Col lg={7}>
+          <Col lg={8}>
             <img
-              src={partner?.logo?.url}
-              alt={partner?.logo?.caption}
-              className="about-logo"
+              src={model?.architecturalPlan?.url}
+              alt={model?.architecturalPlan?.caption}
             />
-            <p>{partner.description}</p>
-            {/* <Link href={partner.url}>{partner.url}</Link> */}
           </Col>
-          <Col lg={5}>
-            <Carousel>
-              {partner &&
-                partner?.slider?.map((slide, index) => (
-                  <Carousel.Item key={`slide-${index}`}>
-                    <img src={slide.url} alt={slide.caption} />
-                  </Carousel.Item>
-                ))}
-            </Carousel>
-          </Col>
-          <Col lg={7} className="pt-4">
-            <p>{partner.extraText}</p>
+          <Col lg={3}>
+            <h3>{model.title}</h3>
+            <p>{model.price}</p>
+            <p>{model.description}</p>
+
+            <Button variant="primary" onClick={handleShow}>
+              {model.btnText}
+            </Button>
           </Col>
         </Row>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col>
+                <iframe
+                  title={`iframe-${id}`}
+                  width="100%"
+                  height="460"
+                  src={`https://roundme.com/embed/${model?.userRoundme}/${model?.hotpointRoundme}`}
+                  frameborder="0"
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allowfullscreen
+                ></iframe>
+              </Col>
+            </Row>
+          </Modal.Body>
+        </Modal>
       </Col>
     </Layout>
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const url = 'https://aquacr-cms.herokuapp.com'
 
-  // const partnerResponse = await fetch(`${url}/partners/${params.id}`)
-  // const partnerResponseJson = await partnerResponse.json()
+  const modelResponse = await fetch(`${url}/models/${params.id}`)
+  const modelResponseJson = await modelResponse.json()
 
-  // const globalResponse = await fetch(`${url}/global`)
-  // const globalResponseJson = await globalResponse.json()
+  const globalResponse = await fetch(`${url}/global`)
+  const globalResponseJson = await globalResponse.json()
 
   return {
     props: {
-      // global: globalResponseJson,
-      // partner: partnerResponseJson,
+      global: globalResponseJson,
+      model: modelResponseJson,
     },
   }
 }

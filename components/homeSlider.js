@@ -2,22 +2,19 @@ import { Carousel, Col, Row } from 'react-bootstrap'
 import Image from 'next/image'
 
 const HomeSlider = ({ homeSlider, lg }) => {
+  console.log(homeSlider)
   return (
-    <Col lg={lg} className="slider-container text-light">
-      <Carousel fade indicators={false}>
-        {homeSlider &&
-          homeSlider?.map((slide, index) => (
-            <Carousel.Item key={`slide-${index}`}>
-              <Image
-                className="d-block w-100"
-                src={slide.background?.url}
-                alt={slide.background?.caption}
-                layout="fill"
-                objectFit="contain"
-              />
-            </Carousel.Item>
-          ))}
-      </Carousel>
+    <Col lg={lg} className="slider-container">
+      <Col lg={12} className="text-light slide-container">
+        <div className="image-container">
+          <Image
+            src={homeSlider[0].background?.url}
+            alt={homeSlider[0].background?.caption}
+            layout="fill"
+            className="image"
+          />
+        </div>
+      </Col>
       <Col lg={12} className="social-container">
         <Row>
           <Col lg={3} className="text-center">

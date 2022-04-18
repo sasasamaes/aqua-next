@@ -21,7 +21,6 @@ export default function Home({
   amenities,
   partners,
 }) {
-
   return (
     <Layout global={global} fluid>
       <Head>

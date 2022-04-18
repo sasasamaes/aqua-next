@@ -12,12 +12,7 @@ const Banner = ({ homepage, lg, global }) => {
             paddingBottom: '20%',
           }}
         >
-          <Image
-            src={global?.logo2?.url}
-            alt={global?.logo2?.caption}
-            layout="fill"
-            objectFit="contain"
-          />
+          <img src={global?.logo2?.url} alt={global?.logo2?.caption} />
         </div>
       </Col>
       <Col lg={6} className="banner-container-text">

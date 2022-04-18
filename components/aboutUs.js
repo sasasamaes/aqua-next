@@ -23,13 +23,12 @@ const AboutUs = ({ lg, partners }) => {
         <Col lg={12} className="about-img center">
           <Row className="flex-column justify-content-center align-items-center">
             {partners.map((partner, index) => (
-              <Col lg={4} className="border border-3 my-4 p-4 ">
-                <Link
-                  href={`/about-us/[id]`}
-                  as={`/about-us/${partner.id}`}
-                  key={index}
-                  className="text-black"
-                >
+              <Link
+                href={`/about-us/${partner.id}`}
+                key={index}
+                className="text-black"
+              >
+                <Col lg={4} className="border border-3 my-4 p-4 ">
                   <>
                     <h3>{partner.title}</h3>
                     <div
@@ -49,8 +48,8 @@ const AboutUs = ({ lg, partners }) => {
 
                     {partner.image}
                   </>
-                </Link>
-              </Col>
+                </Col>
+              </Link>
             ))}
           </Row>
         </Col>

@@ -10,14 +10,12 @@ const Section2 = ({ homepage, lg }) => {
           style={{
             position: 'relative',
             width: '100%',
-            paddingBottom: '20%',
+          
           }}
         >
-          <Image
+          <img
             src={homepage?.section2?.img.url}
             alt={homepage?.section2?.img.caption}
-            layout="fill"
-            objectFit="contain"
           />
         </div>
       </Col>

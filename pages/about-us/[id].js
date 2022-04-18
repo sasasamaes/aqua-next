@@ -46,19 +46,19 @@ function AboutUsId({ partner, global }) {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const url = 'https://aquacr-cms.herokuapp.com'
 
-  // const partnerResponse = await fetch(`${url}/partners/${params.id}`)
-  // const partnerResponseJson = await partnerResponse.json()
+  const partnerResponse = await fetch(`${url}/partners/${params.id}`)
+  const partnerResponseJson = await partnerResponse.json()
 
-  // const globalResponse = await fetch(`${url}/global`)
-  // const globalResponseJson = await globalResponse.json()
+  const globalResponse = await fetch(`${url}/global`)
+  const globalResponseJson = await globalResponse.json()
 
   return {
     props: {
-      // global: globalResponseJson,
-      // partner: partnerResponseJson,
+      global: globalResponseJson,
+      partner: partnerResponseJson,
     },
   }
 }

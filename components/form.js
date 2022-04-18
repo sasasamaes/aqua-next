@@ -22,16 +22,12 @@ const FormComponent = ({ homepage, lg, global }) => {
         <div
           style={{
             position: 'relative',
-            width: '100%',
-            paddingBottom: '20%',
+            width: '25%',
+            paddingBottom: '5px',
+            margin: '0 auto'
           }}
         >
-          <Image
-            src={global?.logo2?.url}
-            alt={global?.logo2?.caption}
-            layout="fill"
-            objectFit="contain"
-          />
+          <img src={global?.logo2?.url} alt={global?.logo2?.caption} />
         </div>
       </Col>
       <Col lg={12} className="form-container-info text-light">
