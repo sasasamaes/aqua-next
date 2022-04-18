@@ -3,8 +3,7 @@ import { Row, Col, Carousel } from 'react-bootstrap'
 import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useIsMounted from '../../hooks/useIsMounted'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 function AboutUsId({ partner, global }) {
   const isMounted = useIsMounted()

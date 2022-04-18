@@ -5,6 +5,7 @@ import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useIsMounted from '../../hooks/useIsMounted'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 function ModelsId({ model, global }) {
   const isMounted = useIsMounted()
