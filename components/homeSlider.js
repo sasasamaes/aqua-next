@@ -2,7 +2,6 @@ import { Carousel, Col, Row } from 'react-bootstrap'
 import Image from 'next/image'
 
 const HomeSlider = ({ homeSlider, lg }) => {
-  console.log(homeSlider)
   return (
     <Col lg={lg} className="slider-container">
       <Col lg={12} className="text-light slide-container">

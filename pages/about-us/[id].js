@@ -10,8 +10,6 @@ function AboutUsId({ partner, global }) {
   const isMounted = useIsMounted()
   // const router = useRouter()
 
-  // console.log('router', router)
-
   return (
     <Layout global={global}>
       <Nav global={global} color="light" type="page" title={partner.title} />
