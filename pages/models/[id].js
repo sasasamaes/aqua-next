@@ -54,9 +54,9 @@ function ModelsId({ model, global }) {
                   height="460"
                   src={`https://roundme.com/embed/${model?.userRoundme}/${model?.hotpointRoundme}`}
                   frameBorder="0"
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allowfullscreen
+                  webKitAllowFullScreen
+                  mozAllowFullScreen
+                  allowFullScreen
                 ></iframe>
               </Col>
             </Row>
