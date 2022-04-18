@@ -48,7 +48,7 @@ function ModelsId({ model, global }) {
                   width="100%"
                   height="460"
                   src={`https://roundme.com/embed/${model?.userRoundme}/${model?.hotpointRoundme}`}
-                  frameborder="0"
+                  frameBorder="0"
                   webkitallowfullscreen
                   mozallowfullscreen
                   allowfullscreen
